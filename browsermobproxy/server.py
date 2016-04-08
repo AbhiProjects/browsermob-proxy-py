@@ -89,6 +89,9 @@ class Server(RemoteServer):
         else:
             self.command = []
         self.command += [path, '--port=%s' % self.port]
+        
+        if options.get('legacy_mode', False) == True:
+            self.command.insert(1,'--use-littleproxy=False')
 
     def start(self, options=None):
         """
