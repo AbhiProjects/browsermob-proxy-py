@@ -56,7 +56,7 @@ class RemoteServer(object):
 
 class Server(RemoteServer):
 
-    def __init__(self, path='browsermob-proxy', options=None):
+    def __init__(self, path='browsermob-proxy-2.1.0-beta-5/bin/browsermob-proxy', options=None):
         """
         Initialises a Server object
 
