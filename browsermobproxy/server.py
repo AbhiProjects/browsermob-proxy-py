@@ -36,6 +36,10 @@ class RemoteServer(object):
             like httpProxy and httpsProxy
         """
         params = params if params is not None else {}
+        
+        if not isinstance(params,dict):
+            raise Exception("params parameter needs to be a dictionary")   
+        
         client = Client(self.url[7:], params)
         return client
 
@@ -62,6 +66,9 @@ class Server(RemoteServer):
             This defaults to an empty dictionary
         """
         options = options if options is not None else {}
+        
+        if not isinstance(options,dict):
+            raise Exception("options parameter needs to be a dictionary")
 
         path_var_sep = ':'
         if platform.system() == 'Windows':
@@ -106,6 +113,10 @@ class Server(RemoteServer):
                 'log_path': os.getcwd(),
                 'log_file': 'server.log',
                 }
+        
+        if not isinstance(options,dict):
+            raise Exception("options parameter needs to be a dictionary")
+    
         log_path = options.get('log_path')
         log_file = options.get('log_file')
         log_path_name = os.path.join(log_path, log_file)
