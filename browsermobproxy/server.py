@@ -37,7 +37,7 @@ class RemoteServer(object):
         """
         params = params if params is not None else {}
         
-        if not isinstance(params,dict):
+        if not isinstance(params, dict):
             raise Exception("params parameter needs to be a dictionary")   
         
         client = Client(self.url[7:], params)
@@ -67,7 +67,7 @@ class Server(RemoteServer):
         """
         options = options if options is not None else {}
         
-        if not isinstance(options,dict):
+        if not isinstance(options, dict):
             raise Exception("options parameter needs to be a dictionary")
 
         path_var_sep = ':'
@@ -114,7 +114,7 @@ class Server(RemoteServer):
                 'log_file': 'server.log',
                 }
         
-        if not isinstance(options,dict):
+        if not isinstance(options, dict):
             raise Exception("options parameter needs to be a dictionary")
     
         log_path = options.get('log_path')
